@@ -7,3 +7,7 @@ Publication Date: February 2, 2026
 ​The Solution (Universal Logic): This protocol utilizes Inertial Kinetic Entropy—the non-linear "jitter" or "wiggle" of a human gait captured by a device’s internal sensors (accelerometer/gyroscope)—to generate a Proof of Presence (PoP) token.
 ​Coordinate Agnosticism: The PoP token is generated at the hardware level prior to any geospatial mapping. This allows the verified human event to be settled on any underlying spatial index (H3, S2, or custom grids) simultaneously. The "Universal Bridge" logic ensures that the user remains a Sovereign Node rather than a tenant of a specific corporate grid.
 ​Algorithm Specification: > 
+ENABLING TECHNOLOGY: THE UNIVERSAL BRIDGE
+​System: A cryptographic settlement layer that decouples Kinetic Proof of Humanity (KPoH) from the spatial index.
+​Functionality: Validates physics-based biological entropy (the "Wiggle") on the device.
+​Outcome: A verified event that can be simultaneously assigned to Uber H3, Google S2, or custom sovereign grids without data leakage or proprietary lock-in.
