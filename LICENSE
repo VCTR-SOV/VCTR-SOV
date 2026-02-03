@@ -1,6 +1,5 @@
-All Rights Reserved
 # VCTR-SOV SOVEREIGN IMPLEMENTATION LICENSE
-​**Copyright (c) 2026 Michael Joel Lewis (ID: 0489) | Anchor: 975ad5a**
+**Copyright (c) 2026 Michael Joel Lewis (ID: 0489) | Anchor: 975ad5a**
 
 ## 1. RESEARCH & DEVELOPMENT
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software for non-commercial, educational, and research purposes only.
@@ -8,7 +7,9 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 ## 2. COMMERCIAL RESTRICTION
 Commercial use, including but not limited to the integration of the "Universal Kinetic Bridge" or "Stochastic Kinetic Verification" into for-profit advertising networks, geospatial data marketplaces, or coordinate-based rewards systems, is STRICTLY PROHIBITED without a direct licensing agreement from the author, Michael Joel Lewis.
 
-## 3. ATTRIBUTION
-Any derivative works or forks of this protocol must maintain this license and explicitly credit "Michael Joel Lewis aka Supreme" as the architect of the Universal Participation Logic.
+## 3. ATTRIBUTION & ANCHORING
+Any derivative works, forks, or implementations of this protocol must maintain this license and explicitly credit "Michael Joel Lewis aka Supreme" as the architect. The Hash Anchor (975ad5a) must remain visible in the project metadata to track the lineage of the logic.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND.
