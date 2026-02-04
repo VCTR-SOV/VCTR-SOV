@@ -1,3 +1,4 @@
+https://discord.gg/VcAR7qk7bj
 # VCTR-SOV: The Universal Settlement Engine
 
 **Protocol:** 975ad5a  
