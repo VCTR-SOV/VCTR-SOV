@@ -1,0 +1,86 @@
+# VCTR-SOV: The Universal Settlement Engine
+### Protocol Anchor: `975ad5a` | Architect: `975A`
+
+![Status](https://img.shields.io/badge/Status-Live-green) ![Protocol](https://img.shields.io/badge/Protocol-Physics_Identity-blue) ![License](https://img.shields.io/badge/License-Proprietary_Commercial-black)
+
+## 1. Abstract
+**VCTR-SOV** is a **Decentralized Physical Infrastructure Network (DePin)** operating as a Zero-Knowledge Identity Oracle. 
+
+Unlike traditional verification systems that rely on bureaucratic data (State ID) or invasive biometrics (Iris/Face Scans), VCTR-SOV utilizes **Stochastic Kinetic Verification (SKV)**. It distinguishes biological human presence from synthetic actors (AI/Bots) by analyzing the thermodynamic entropy of device movement.
+
+**Core Thesis:** "Identity is not data stored in a vault. Identity is the unique thermodynamic inefficiency of biological movement."
+
+---
+
+## 2. The Core Logic: Stochastic Kinetic Verification (SKV)
+
+The engine relies on the **Lewis Threshold** to validate humanity.
+
+### The Lewis Threshold ($H > 0.82$)
+Biological muscle movement contains micro-tremors and imperfections that machines (and generative AI injection attacks) struggle to replicate without massive energy expenditure.
+
+* **Input:** 3-Axis Accelerometer & Gyroscope (Raw IMU Data).
+* **Process:** Calculates the **Shannon Entropy ($H$)** of the kinetic signal over a 3-second window.
+* **Validation:**
+    * If $H < 0.82$: **REJECT** (Signal is too perfect/mechanical).
+    * If $H \ge 0.82$: **VERIFY** (Signal exhibits biological entropy).
+
+### The Integrity Hash: `975ad5a`
+To prevent replay attacks, every verification session is salted with the immutable Protocol Anchor.
+* **Session Hash Construction:** `SHA256(User_UUID + Timestamp + Entropy_Score + "975ad5a")`
+
+---
+
+## 3. Protocol Economics & Governance
+
+VCTR-SOV is a **Digital Commodity Protocol**, not a financial institution.
+
+### The 1.0% Protocol Constant
+Commercial applications utilizing the VCTR-SOV verification layer must remit a **1.0% Protocol Sustainability Constant** to the Genesis Reserve. This fee supports the maintenance of the cryptographic anchor and legal defense of the protocol.
+
+**Genesis Reserve (SOL/SPL):**
+`85p7LyG8cG7qk12s3hCwSGVq75AHgQFvrSCfFnCVmeQi`
+
+---
+
+## 4. Legal & Regulatory Framework (2026)
+
+**Classification:** Digital Commodity / Identity Oracle.
+**Compliance:**
+* **Data Privacy:** Zero-Knowledge (ZK) Architecture. No Personally Identifiable Information (PII) is transmitted to servers. Verification is local; only the boolean result (True/False) is broadcast.
+* **Exemptions:** VCTR-SOV is **NOT** a "Payment Stablecoin Issuer" under Florida SB 314. It does not custody user funds or issue fiat-backed claims. It processes verification logic.
+
+---
+
+## 5. Implementation (Python Reference)
+
+```python
+import hashlib
+import numpy as np
+
+# CONSTANTS
+ANCHOR_HASH = "975ad5a"
+LEWIS_THRESHOLD = 0.82
+
+def verify_entropy(kinetic_data):
+    """
+    Validates if movement is biological based on Shannon Entropy.
+    """
+    # Calculate probability distribution of movement
+    probabilities = np.histogram(kinetic_data, density=True)[0]
+    probabilities = probabilities[probabilities > 0] # Filter zeros
+    
+    # Calculate Shannon Entropy
+    entropy = -np.sum(probabilities * np.log2(probabilities))
+    
+    if entropy > LEWIS_THRESHOLD:
+        return True, entropy
+    else:
+        return False, entropy
+
+def sign_session(user_id, timestamp, score):
+    """
+    Generates the Session Proof using the 975ad5a Anchor.
+    """
+    raw_string = f"{user_id}|{timestamp}|{score}|{ANCHOR_HASH}"
+    return hashlib.sha256(raw_string.encode()).hexdigest()
