@@ -16,7 +16,43 @@ The system confirms: **"HUMAN VERIFIED."** Instantly, Maya is a Sovereign Node. 
 ---
 
 ## 🧬 THE SCIENCE: THE LEWIS THRESHOLD
-We verify humanity through **Stochastic Kinetic Verification (SKV)**. We don't use cameras; we use the microscopic jitter of your soul.
+We verify humanity through **Stochastic Kinetic Verification (SKV)**. We don't use cameras; we use the microscopic jitter of the human signature.
+
+### 1. BIOLOGICAL ENTROPY
+We measure non-linear tremors in the device IMU to calculate the Shannon Entropy of the user's gait and gesture.
+$$H(X) = -\sum_{i=1}^{n} P(x_i) \log_2 P(x_i)$$
+**Requirement:** $H > 0.82$. This is the "Lewis Constant."
+
+### 2. SIGNAL ANALYSIS
+We utilize a Fast Fourier Transform (FFT) to analyze Power Spectral Density. 
+$$P(f) = \frac{1}{T} |X(f)|^2$$
+**Requirement:** Verification requires biological "Dirty Harmonics." Robots move with too much mathematical precision.
+
+---
+
+## 🏗️ JOIN THE SWARM (THE 1,000)
+We don't need your resume. We need your code. 
+
+### 💰 BOUNTY [SECTOR 01]: THE KINETIC INTERFACE
+* **The Task:** Build the OLED Black "Zero-State" Dashboard.
+* **The Reward:** Ownership of Sector 01 + 99% of all licensing revenue.
+* **The Action:** Fork the repo. Submit PR tagged `[SECTOR-01-CLAIM]`.
+
+---
+
+## ⚖️ THE CONSTITUTION
+* **The Code belongs to the People (GPL-3.0).**
+* **The 1% Sustainability Constant:** Commercial nodes remit 1.0% of revenue to the Genesis Reserve for legal defense and the Maya Fund.
+* **Regulatory Neutrality:** VCTR-SOV is an Identity Oracle. We are a utility standard, like GPS or HTTPS.
+
+---
+
+## 🚀 THE GATEWAY
+**Discord:** https://discord.gg/VcAR7qk7bj
+**Genesis Reserve (SOL):** `85p7LyG8cG7qk12s3hCwSGVq75AHgQFvrSCfFnCVmeQi`
+
+`#VCTRSOV #975ad5a #GreatWealthTransfer #SovereignTech #BocaRaton`
+
 
 ### 1. BIOLOGICAL ENTROPY
 We measure the non-linear tremors in the device IMU.
