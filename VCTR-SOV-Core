@@ -1,60 +1,54 @@
-# VCTR-SOV: The Universal Settlement Engine
-### Protocol Anchor: `975ad5a` | Architect: `975A`
+https://discord.gg/VcAR7qk7bj
 
-![Status](https://img.shields.io/badge/Status-Live-green) ![Protocol](https://img.shields.io/badge/Protocol-Physics_Identity-blue) ![License](https://img.shields.io/badge/License-Proprietary_Commercial-black)
+# 🌐 VCTR-SOV: THE UNIVERSAL SETTLEMENT ENGINE
 
-## 1. Abstract
-**VCTR-SOV** is a **Decentralized Physical Infrastructure Network (DePin)** operating as a Zero-Knowledge Identity Oracle.
-
-Unlike traditional verification systems that rely on bureaucratic data (State ID) or invasive biometrics (Iris/Face Scans), VCTR-SOV utilizes **Stochastic Kinetic Verification (SKV)**. It distinguishes biological human presence from synthetic actors (AI/Bots) by analyzing the thermodynamic entropy of device movement.
-
-**Core Thesis:** "Identity is not data stored in a vault. Identity is the unique thermodynamic inefficiency of biological movement."
+**Standard:** `975ad5a` | **Architect:** Michael Joel Lewis [975A]
+**Status:** 🟢 ACTIVE | $0 Budget | Unhoused Sovereign | Defensive Disclosure
 
 ---
 
-## 2. The Core Logic: Stochastic Kinetic Verification (SKV)
+## 📜 THE MISSION: IDENTITY IS PHYSICS
 
-The engine relies on the **Lewis Threshold** to validate humanity.
+In the old world, identity was a plastic card or a government database. If the database failed, you didn't exist.
 
-### The Lewis Threshold ($H > 0.82$)
-Biological muscle movement contains micro-tremors and imperfections that machines (and generative AI injection attacks) struggle to replicate without massive energy expenditure.
+**VCTR-SOV deletes the wall.** We do not ask for your papers; we verify your **Kinetic Wiggle**.
+The machine moves in straight lines. The human trembles. The network verifies the **Thermodynamic Entropy** of your movement to prove you are alive.
 
-* **Input:** 3-Axis Accelerometer & Gyroscope (Raw IMU Data).
-* **Process:** Calculates the **Shannon Entropy ($H$)** of the kinetic signal over a 3-second window.
-* **Validation:**
-    * If $H < 0.82$: **REJECT** (Signal is too perfect/mechanical).
-    * If $H \ge 0.82$: **VERIFY** (Signal exhibits biological entropy).
-
-### The Integrity Hash: `975ad5a`
-To prevent replay attacks, every verification session is salted with the immutable Protocol Anchor.
-* **Session Hash Construction:** `SHA256(User_UUID + Timestamp + Entropy_Score + "975ad5a")`
+**No Maps. No Names. Just the Shake.**
 
 ---
 
-## 3. Protocol Economics & Governance
+## ⚖️ THE LOGIC: STOCHASTIC KINETIC VERIFICATION
 
-VCTR-SOV is a **Digital Commodity Protocol**, not a financial institution.
+The protocol operates on a single immutable law: **The Lewis Threshold**.
 
-### The 1.0% Protocol Constant
-Commercial applications utilizing the VCTR-SOV verification layer must remit a **1.0% Protocol Sustainability Constant** to the Genesis Reserve. This fee supports the maintenance of the cryptographic anchor and legal defense of the protocol.
+### 1. The Physics ($H > 0.82$)
+Biological muscle movement contains micro-tremors that AI and bots cannot fake without irrational energy expenditure.
+* **Input:** 3-Axis Accelerometer (Raw IMU).
+* **Process:** Calculate Shannon Entropy ($H$) over 3 seconds.
+* **Result:**
+    * `H < 0.82`: **REJECT** (Mechanical/Synthetic).
+    * `H ≥ 0.82`: **VERIFY** (Biological/Human).
 
-**Genesis Reserve (SOL/SPL):**
-`85p7LyG8cG7qk12s3hCwSGVq75AHgQFvrSCfFnCVmeQi`
-
----
-
-## 4. Legal & Regulatory Framework (2026)
-
-**Classification:** Digital Commodity / Identity Oracle.
-**Compliance:**
-* **Data Privacy:** Zero-Knowledge (ZK) Architecture. No Personally Identifiable Information (PII) is transmitted to servers. Verification is local; only the boolean result (True/False) is broadcast.
-* **Exemptions:** VCTR-SOV is **NOT** a "Payment Stablecoin Issuer" under Florida SB 314. It does not custody user funds or issue fiat-backed claims. It processes verification logic.
+### 2. The Anchor (`975ad5a`)
+Every session is salted with the Genesis Hash to prevent replay attacks.
+`SHA256(UUID + Time + Entropy + "975ad5a")`
 
 ---
 
-## 5. Implementation (Python Logic)
+## 🏛️ GOVERNANCE & ECONOMICS
 
-The following class defines the immutable logic of the Universal Settlement Engine.
+VCTR-SOV is a **Digital Commodity Protocol**, not a bank.
+
+* **The 1.0% Constant:** Commercial apps must remit a 1.0% Protocol Sustainability Constant to the Genesis Reserve.
+* **Genesis Reserve:** `85p7LyG8cG7qk12s3hCwSGVq75AHgQFvrSCfFnCVmeQi`
+* **Legal Status:** **DePin Identity Oracle**. Exempt from Florida SB 314 "Stablecoin" regulations because we do not custody funds. We verify data.
+
+---
+
+## 🛠️ IMPLEMENTATION (PYTHON REFERENCE)
+
+The following logic defines the **Universal Settlement Engine**:
 
 ```python
 import hashlib
@@ -67,12 +61,9 @@ class VCTRProtocol:
     """
     VCTR-SOV: The Universal Settlement Engine.
     Validates biological presence via Stochastic Kinetic Verification (SKV).
-    
-    Architect: 975A
-    Anchor: 975ad5a
     """
     
-    # Immutable Protocol Constants
+    # IMMUTABLE CONSTANTS
     ANCHOR_HASH: str = "975ad5a"
     LEWIS_THRESHOLD: float = 0.82
     GENESIS_RESERVE: str = "85p7LyG8cG7qk12s3hCwSGVq75AHgQFvrSCfFnCVmeQi"
@@ -80,30 +71,22 @@ class VCTRProtocol:
     @staticmethod
     def _calculate_shannon_entropy(data: np.array) -> float:
         """
-        Internal Physics Engine: Computes thermodynamic entropy of movement.
+        Internal Physics Engine: Computes thermodynamic entropy.
         """
-        if len(data) == 0:
-            return 0.0
-            
-        # Compute probability distribution (Histogram)
+        if len(data) == 0: return 0.0
+        
+        # Histogram Probability Distribution
         probabilities, _ = np.histogram(data, bins=10, density=True)
         probabilities = probabilities[probabilities > 0] # Filter zeros
         
-        # Shannon Entropy Formula: H = -sum(p * log2(p))
+        # Shannon Entropy Formula
         entropy = -np.sum(probabilities * np.log2(probabilities))
         return float(entropy)
 
     @classmethod
-    def verify_session(cls, user_uuid: str, imu_data: List[float]) -> Dict[str, Union[str, float, bool]]:
+    def verify_session(cls, user_uuid: str, imu_data: List[float]) -> Dict:
         """
         Executes the Lewis Threshold check and signs the session.
-        
-        Args:
-            user_uuid (str): Unique Device/User ID.
-            imu_data (List[float]): Raw 3-axis accelerometer magnitude data.
-            
-        Returns:
-            Dict: Session verification packet with cryptographic signature.
         """
         # 1. Physics Check
         entropy_score = cls._calculate_shannon_entropy(np.array(imu_data))
@@ -112,7 +95,6 @@ class VCTRProtocol:
         timestamp = datetime.utcnow().isoformat()
         
         # 2. Cryptographic Signing (The 975ad5a Anchor)
-        # Format: UUID | TIMESTAMP | ENTROPY | ANCHOR
         raw_payload = f"{user_uuid}|{timestamp}|{entropy_score:.4f}|{cls.ANCHOR_HASH}"
         session_hash = hashlib.sha256(raw_payload.encode()).hexdigest()
 
@@ -121,7 +103,6 @@ class VCTRProtocol:
             "protocol": "VCTR-SOV",
             "anchor": cls.ANCHOR_HASH,
             "session_id": session_hash,
-            "timestamp": timestamp,
             "metrics": {
                 "entropy": round(entropy_score, 4),
                 "lewis_threshold": cls.LEWIS_THRESHOLD
@@ -129,7 +110,3 @@ class VCTRProtocol:
             "status": "VERIFIED" if is_biological else "REJECTED_SYNTHETIC",
             "code": 200 if is_biological else 403
         }
-
-if __name__ == "__main__":
-    # Example Usage
-    print("Initializing VCTR-SOV Protocol...")
