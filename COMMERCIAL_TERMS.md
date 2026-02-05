@@ -22,5 +22,16 @@ The Architect (Michael Joel Lewis) retains the immutable right to the **Genesis 
 * **The Builder's Right:** Developers who build "Sectors" (Modules/Nodes) retain **99% of the revenue** and **100% of the Intellectual Property** for their specific interface and code.
 * **The Architect's Right:** The Architect retains sole ownership of the **VCTR-SOV™ Trademark**, the **975ad5a Protocol Standard**, and the **Genesis Constant**.
 
+## 4. THE GENESIS RESERVE (Settlement & Grants)
+Since this Protocol is launching with a $0 budget, the Genesis Reserve serves as the central treasury for:
+1.  **Grant Funding:** Supporting the Architect (Michael Joel Lewis) and the core infrastructure.
+2.  **Fee Settlement:** Until the Automated Smart Contract is deployed, all "Genesis Fees" (The 1%) must be manually remitted to the address below.
+
+### 🏦 Official Settlement Address
+**Accepting:** [Insert Chain, e.g., Solana / ETH / BTC]
+**Address:** `[PASTE YOUR WALLET ADDRESS HERE]`
+
+*Note: This is the ONLY official address for VCTR-SOV™ operations. Verify the 975A hash before sending.*
+
 ---
 *By cloning, forking, or utilizing the 975ad5a hash, all parties agree to these Commercial Terms.*
