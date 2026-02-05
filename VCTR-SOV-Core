@@ -4,7 +4,7 @@
 ![Status](https://img.shields.io/badge/Status-Live-green) ![Protocol](https://img.shields.io/badge/Protocol-Physics_Identity-blue) ![License](https://img.shields.io/badge/License-Proprietary_Commercial-black)
 
 ## 1. Abstract
-**VCTR-SOV** is a **Decentralized Physical Infrastructure Network (DePin)** operating as a Zero-Knowledge Identity Oracle. 
+**VCTR-SOV** is a **Decentralized Physical Infrastructure Network (DePin)** operating as a Zero-Knowledge Identity Oracle.
 
 Unlike traditional verification systems that rely on bureaucratic data (State ID) or invasive biometrics (Iris/Face Scans), VCTR-SOV utilizes **Stochastic Kinetic Verification (SKV)**. It distinguishes biological human presence from synthetic actors (AI/Bots) by analyzing the thermodynamic entropy of device movement.
 
@@ -52,35 +52,84 @@ Commercial applications utilizing the VCTR-SOV verification layer must remit a *
 
 ---
 
-## 5. Implementation (Python Reference)
+## 5. Implementation (Python Logic)
+
+The following class defines the immutable logic of the Universal Settlement Engine.
 
 ```python
 import hashlib
+import json
 import numpy as np
+from typing import List, Dict, Union
+from datetime import datetime
 
-# CONSTANTS
-ANCHOR_HASH = "975ad5a"
-LEWIS_THRESHOLD = 0.82
-
-def verify_entropy(kinetic_data):
+class VCTRProtocol:
     """
-    Validates if movement is biological based on Shannon Entropy.
-    """
-    # Calculate probability distribution of movement
-    probabilities = np.histogram(kinetic_data, density=True)[0]
-    probabilities = probabilities[probabilities > 0] # Filter zeros
+    VCTR-SOV: The Universal Settlement Engine.
+    Validates biological presence via Stochastic Kinetic Verification (SKV).
     
-    # Calculate Shannon Entropy
-    entropy = -np.sum(probabilities * np.log2(probabilities))
+    Architect: 975A
+    Anchor: 975ad5a
+    """
     
-    if entropy > LEWIS_THRESHOLD:
-        return True, entropy
-    else:
-        return False, entropy
+    # Immutable Protocol Constants
+    ANCHOR_HASH: str = "975ad5a"
+    LEWIS_THRESHOLD: float = 0.82
+    GENESIS_RESERVE: str = "85p7LyG8cG7qk12s3hCwSGVq75AHgQFvrSCfFnCVmeQi"
 
-def sign_session(user_id, timestamp, score):
-    """
-    Generates the Session Proof using the 975ad5a Anchor.
-    """
-    raw_string = f"{user_id}|{timestamp}|{score}|{ANCHOR_HASH}"
-    return hashlib.sha256(raw_string.encode()).hexdigest()
+    @staticmethod
+    def _calculate_shannon_entropy(data: np.array) -> float:
+        """
+        Internal Physics Engine: Computes thermodynamic entropy of movement.
+        """
+        if len(data) == 0:
+            return 0.0
+            
+        # Compute probability distribution (Histogram)
+        probabilities, _ = np.histogram(data, bins=10, density=True)
+        probabilities = probabilities[probabilities > 0] # Filter zeros
+        
+        # Shannon Entropy Formula: H = -sum(p * log2(p))
+        entropy = -np.sum(probabilities * np.log2(probabilities))
+        return float(entropy)
+
+    @classmethod
+    def verify_session(cls, user_uuid: str, imu_data: List[float]) -> Dict[str, Union[str, float, bool]]:
+        """
+        Executes the Lewis Threshold check and signs the session.
+        
+        Args:
+            user_uuid (str): Unique Device/User ID.
+            imu_data (List[float]): Raw 3-axis accelerometer magnitude data.
+            
+        Returns:
+            Dict: Session verification packet with cryptographic signature.
+        """
+        # 1. Physics Check
+        entropy_score = cls._calculate_shannon_entropy(np.array(imu_data))
+        is_biological = entropy_score > cls.LEWIS_THRESHOLD
+        
+        timestamp = datetime.utcnow().isoformat()
+        
+        # 2. Cryptographic Signing (The 975ad5a Anchor)
+        # Format: UUID | TIMESTAMP | ENTROPY | ANCHOR
+        raw_payload = f"{user_uuid}|{timestamp}|{entropy_score:.4f}|{cls.ANCHOR_HASH}"
+        session_hash = hashlib.sha256(raw_payload.encode()).hexdigest()
+
+        # 3. Settlement Output
+        return {
+            "protocol": "VCTR-SOV",
+            "anchor": cls.ANCHOR_HASH,
+            "session_id": session_hash,
+            "timestamp": timestamp,
+            "metrics": {
+                "entropy": round(entropy_score, 4),
+                "lewis_threshold": cls.LEWIS_THRESHOLD
+            },
+            "status": "VERIFIED" if is_biological else "REJECTED_SYNTHETIC",
+            "code": 200 if is_biological else 403
+        }
+
+if __name__ == "__main__":
+    # Example Usage
+    print("Initializing VCTR-SOV Protocol...")
