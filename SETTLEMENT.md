@@ -1,36 +1,54 @@
-# VCTR-SOV SETTLEMENT PROTOCOL (v2.0)
-**Anchor:** 975ad5a | **Architect:** Supreme (ID: 0489) | **Type:** Universal Infrastructure
+# UNIVERSAL SETTLEMENT LOGIC (v2.0)
+**Anchor:** `975ad5a` | **Architect:** 975A | **Type:** Financial Bridge
 
 ## 1. THE OBJECTIVE
-To provide a coordinate-agnostic **Settlement Layer** that automates the release of programmable bounties upon the cryptographic validation of biological humanity. The Protocol acts as a neutral bridge between "Physical Presence" and "Digital Settlement."
+To provide a coordinate-agnostic **Settlement Layer** that automates the release of programmable bounties upon the cryptographic validation of biological humanity.
 
-## 2. THE VALIDATION GATE (THE "LEWIS THRESHOLD")
-Settlement is triggered ONLY when the **VCTR-01** logic confirms a 4-Stage Physics Handshake. 
+## 2. THE VALIDATION GATE (THE LEWIS THRESHOLD)
+Settlement is triggered **ONLY** when the Core Logic confirms the Stochastic Kinetic Verification (SKV).
 
-### Stage I: Kinetic Decay Analysis
-* **Input:** 3-Axis Accelerometer (Raw).
-* **Test:** Must exhibit "Biological Fatigue" (non-linear entropy) over a set time window.
-* **Reject:** Perfect mechanical rhythm (bots/motors).
+* **Input:** 3-Axis Accelerometer (Raw Kinetic Data).
+* **The Law:** Shannon Entropy ($H$) > 0.82.
+* **Reject:** $H < 0.82$ (Mechanical/Bot/Spoof).
+* **Verify:** $H \ge 0.82$ (Biological/Human).
 
-### Stage II: Acoustic Time-of-Flight (ToF)
-* **Input:** Ultrasonic Pulse Response (18kHz - 22kHz).
-* **Test:** Sub-inch proximity verification against the Anchor Node.
-* **Reject:** Multipath signals (echoes) indicating remote spoofing.
+*(Note: We have deprecated Acoustic and Barometric checks to minimize hardware friction and maximize privacy.)*
 
-### Stage III: Barometric Delta Sync
-* **Input:** Pressure Sensor (hPa).
-* **Test:** Floor-level vertical validation.
-* **Reject:** Vertical signal bleed or GPS altitude spoofing.
-
-### Stage IV: The Heartbeat Handshake
-* **Input:** Capacitive Touch Event.
-* **Test:** 3-Finger "Sovereign Hold" (2.0s duration).
-* **Reject:** Passive device aggregation (muling).
-
-## 3. DISBURSEMENT LOGIC (VARIABLE SETTLEMENT)
-The Protocol does not set the price. The `Bounty_Value` is defined strictly by the **Sponsor Node** (e.g., The Merchant, The Municipality, or The Network).
+## 3. DISBURSEMENT LOGIC (SMART CONTRACT)
+The Protocol acts as the "Switch." When the switch flips (Verified), the Sponsor's funds move.
 
 ```javascript
+// Universal Settlement Function
+// Standard: 975ad5a
+
+async function executeSettlement(sponsorWallet, userHash, kineticData) {
+  
+  const ANCHOR = "975ad5a";
+  const LEWIS_THRESHOLD = 0.82;
+
+  // 1. Verify Physics (The Wiggle)
+  // Calls the Python/Rust Core Logic
+  let entropyScore = calculateEntropy(kineticData);
+
+  if (entropyScore > LEWIS_THRESHOLD) {
+    
+    // 2. Generate Proof
+    let sessionProof = sha256(userHash + Date.now() + ANCHOR);
+
+    // 3. Execute Transfer (The "Pay" Command)
+    await Ledger.transfer({
+      from: sponsorWallet,
+      to: userHash,
+      proof: sessionProof,
+      memo: "VCTR: VERIFIED HUMAN"
+    });
+
+    return { status: "SETTLED", proof: sessionProof };
+    
+  } else {
+    return { status: "DENIED", reason: "LOW_ENTROPY_SIGNAL" };
+  }
+}
 // Universal Settlement Function
 // Protocol: 975ad5a
 
