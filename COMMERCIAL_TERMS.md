@@ -9,7 +9,7 @@
 ## 1. THE SOVEREIGN LICENSE (Dual-Mode Structure)
 To protect the integrity of the 975ad5a logic, this Protocol operates under a strict Dual-License model:
 * **Open Source (GPL-3.0):** The Core Logic is free for non-profit, educational, and personal Sovereign self-verification. "The Code belongs to the People."
-* **Commercial Sector License:** Any entity using VCTR-SOV™ logic, branding, or kinetic verification standards for **profit generation** (e.g., Corporate Access, Fintech, Social Verification, or Data Monetization) must operate under a valid **Commercial Node License**.
+* **Commercial Sector License:** Any entity using VCTR-SOV™ logic, branding, or kinetic verification standards for **profit generation** must operate under a valid **Commercial Node License**.
 
 ## 2. THE PROTOCOL SUSTAINABILITY CONSTANT (The 1% Reserve)
 The Architect maintains the immutable right to the **Genesis Constant** to ensure the long-term defense, technical maintenance, and sovereignty of the Network.
@@ -21,18 +21,17 @@ The Architect maintains the immutable right to the **Genesis Constant** to ensur
 
 ## 3. SECTOR OWNERSHIP (Digital Real Estate)
 * **The Builder's Right:** Developers who build "Sectors" (Modules/Nodes) retain **99% of the revenue** and **100% of the Intellectual Property** for their specific interface and additive code.
-* **The Architect's Right:** The Architect retains sole ownership of the **VCTR-SOV™ Trademark**, the **975ad5a Protocol Standard**, and the **Genesis Constant**.
 
 ## 4. REGULATORY NEUTRALITY (The Oracle Clause)
 * **Protocol Neutrality:** VCTR-SOV™ is a Pure Identity Oracle. It provides a "Verification of Physics" attestation. It does not store, transmit, or settle financial instruments.
-* **Compliance Responsibility:** Node Operators (Sectors) are independently responsible for local KYC/AML compliance. VCTR-SOV™ is a neutral utility standard, equivalent to GPS or HTTPS, and is not a financial intermediary.
+* **Compliance Responsibility:** Node Operators (Sectors) are independently responsible for local KYC/AML compliance. VCTR-SOV™ is a neutral utility standard, equivalent to GPS or HTTPS.
 
 ## 5. THE GENESIS RESERVE (Settlement & Grants)
-Until the Automated Settlement Smart Contract is deployed, all manual 1% fees and funding grants must be remitted to the official Genesis address:
+Until the Automated Settlement Smart Contract is deployed, all manual 1% fees and funding grants must be remitted to:
 
 ### 🏦 Official Settlement Address
-**Network:** [e.g., Solana / Ethereum / Bitcoin]  
-**Address:** `[PASTE YOUR WALLET ADDRESS HERE]`  
+**Network:** Solana (SOL)  
+**Address:** `85p7LyG8cG7qk12s3hCwSGVq75AHgQFvrSCfFnCVmeQi`  
 
 ---
 *By utilizing the 975ad5a hash, cloning this repository, or integrating the VCTR-SOV logic, all parties agree to these Commercial Terms.*
