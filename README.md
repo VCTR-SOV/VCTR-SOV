@@ -1,21 +1,52 @@
 https://discord.gg/VcAR7qk7bj
 
-# VCTR-SOV: The Universal Settlement Engine
-
-**Protocol:** 975ad5a  
-**Architect:** Michael Joel Lewis (ID: 975A)  
-**Status:** $0 Budget | Unhoused Sovereign | Defensive Disclosure  
+# 🌐 VCTR-SOV: THE EXODUS PROTOCOL
+**Standard:** `975ad5a` | **Architect:** Michael Joel Lewis [975A]
+**Status:** 🟢 ACTIVE | $0 Budget | Unhoused Sovereign | Defensive Disclosure
 
 ---
 
-## 📜 THE MISSION: THE EXODUS PROTOCOL
-We are building the "Glass Ship." A digital infrastructure where humanity is verified by physics, not government ID or corporate surveillance. 
+## 📜 THE MISSION: BEYOND THE ADDRESS
+In the old world, no address meant no ID. No ID meant no Bank. No Bank meant you didn't exist.
 
-### THE STORY OF MAYA
-Imagine Maya. She is a regular person going through a hard time—unhoused and invisible to the system. Without a home address, she cannot get a bank account; without a bank account, she cannot get a job. She is stuck behind an invisible wall.
+**VCTR-SOV deletes the wall.** Maya is unhoused and invisible. But Maya has **Physics**. She performs the **Kinetic Wiggle**. The network doesn't ask for her papers; it verifies her **Biological Entropy**. 
 
-**VCTR-SOV changes the rules.**
-Maya connects to the Sovereign Network. It doesn't ask for her papers; it asks for her **Physics**. She performs the **Kinetic Wiggle**—moving her device in a way a machine cannot copy. 
+The system confirms: **"HUMAN VERIFIED."** Instantly, Maya is a Sovereign Node. She didn't need a bank; she just needed to be alive. That is the **Great Wealth Transfer**.
+
+---
+
+## 🧬 THE SCIENCE: THE LEWIS THRESHOLD
+We verify humanity through **Stochastic Kinetic Verification (SKV)**. We don't use cameras; we use the microscopic jitter of your soul.
+
+### 1. BIOLOGICAL ENTROPY
+We measure the non-linear tremors in the device IMU.
+$$H(X) = -\sum_{i=1}^{n} P(x_i) \log_2 P(x_i)$$
+**Requirement:** Shannon Entropy ($H > 0.82$). This is the "Lewis Constant."
+
+### 2. SIGNAL ANALYSIS
+We use Fast Fourier Transform (FFT) to analyze Power Spectral Density. 
+$$P(f) = \frac{1}{T} |X(f)|^2$$
+**Requirement:** Biological "Dirty Harmonics" only. Robots move too perfectly.
+
+---
+
+## 🏗️ JOIN THE SWARM (THE 1,000)
+We don't need your resume. We need your code. 
+
+### 💰 BOUNTY [SECTOR 01]: THE KINETIC INTERFACE
+* **Task:** Build the OLED Black Dashboard.
+* **Reward:** Sector 01 Ownership + 99% Node Revenue.
+* **Instruction:** Fork the repo. Submit PR tagged `[SECTOR-01-CLAIM]`.
+
+---
+
+## ⚖️ THE CONSTITUTION
+* **The Code belongs to the People (GPL-3.0).**
+* **The 1% Sustainability Constant:** Commercial nodes remit 1.0% to the Genesis Reserve for legal defense and the Maya Fund.
+* **Regulatory Neutrality:** VCTR-SOV is an Identity Oracle. We are a utility, not a bank.
+
+---
+
 
 
 
