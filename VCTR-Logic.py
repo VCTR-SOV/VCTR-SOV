@@ -1,39 +1,30 @@
-# [Join the Discord](https://discord.gg/VcAR7qk7bj)
+import numpy as np
 
-# 🌐 VCTR-SOV: THE UNIVERSAL SETTLEMENT ENGINE
-
-**Standard:** `975ad5a` | **Architect:** Michael Joel Lewis [975A]
-**Status:** 🟢 ACTIVE | $0 Budget | Unhoused Sovereign | Defensive Disclosure
-
----
-
-## 📜 THE MISSION: IDENTITY IS PHYSICS
-
-In the old world, identity was a plastic card or a government database. If the database failed, you didn't exist.
-
-**VCTR-SOV deletes the wall.** We do not ask for your papers; we verify your **Kinetic Wiggle**.
-The machine moves in straight lines. The human trembles. The network verifies the **Thermodynamic Entropy** of your movement to prove you are alive.
-
-**No Maps. No Names. Just the Shake.**
-
----
-
-## ⚖️ THE LOGIC: STOCHASTIC KINETIC VERIFICATION
-
-The protocol operates on a single immutable law: **The Lewis Threshold**.
-
-### 1. The Physics ($H > 0.82$)
-Biological muscle movement contains micro-tremors that AI and bots cannot fake without irrational energy expenditure.
-* **Input:** 3-Axis Accelerometer (Raw IMU).
-* **Process:** Calculate Shannon Entropy ($H$) over 3 seconds.
-* **Result:**
-    * `H < 0.82`: **REJECT** (Mechanical/Synthetic).
-    * `H ≥ 0.82`: **VERIFY** (Biological/Human).
-
-### 2. The Anchor (`975ad5a`)
-Every session is salted with the Genesis Hash to prevent replay attacks.
-`SHA256(UUID + Time + Entropy + "975ad5a")`
-
+def detect_mechanical_spoof(imu_data, sampling_rate=100):
+    """
+    THE PAINT SHAKER PROTOCOL
+    Analyzes the Frequency Domain to distinguish between:
+    1. Human Tremor (Stochastic/Dirty Spectrum)
+    2. Mechanical Vibrator (Harmonic/Clean Spectrum)
+    """
+    # 1. Convert Time Domain to Frequency Domain (FFT)
+    fft_vals = np.fft.rfft(imu_data)
+    fft_freq = np.fft.rfftfreq(len(imu_data), 1.0/sampling_rate)
+    
+    # 2. Calculate Power Spectral Density (PSD)
+    psd = np.abs(fft_vals) ** 2
+    
+    # 3. Peak Detection (The Machine Signature)
+    # Machines concentrate >90% of energy in a single narrow frequency band.
+    total_energy = np.sum(psd)
+    peak_energy = np.max(psd)
+    concentration_ratio = peak_energy / total_energy
+    
+    # THE LAW: If 50% of energy is in one frequency, it's a motor.
+    if concentration_ratio > 0.50:
+        return True, f"MECHANICAL_ARTIFACT_DETECTED (Ratio: {concentration_ratio:.2f})"
+        
+    return False, "BIOLOGICAL_SIGNATURE_CONFIRMED"
 ---
 
 ## 🏛️ GOVERNANCE & ECONOMICS
