@@ -3,7 +3,7 @@
 # 🌐 VCTR-SOV: THE UNIVERSAL SETTLEMENT ENGINE
 
 **Standard:** `975ad5a` | **Architect:** Michael Joel Lewis [975A]
-**Status:** 🟢 ACTIVE | $0 Budget | Unhoused Sovereign | Defensive Disclosure
+**Status:** 🟢 ACTIVE | **Budget:** $0 | **Mode:** Unhoused Sovereign | **License:** 975A-SOV
 
 ---
 
@@ -18,9 +18,126 @@ The machine moves in straight lines. The human trembles. The network verifies th
 
 ---
 
+## 🔮 THE MAYA PARADIGM: OPERATIONAL UTILITY v2.1
+
+> "Identity is not a card. Identity is Physics."
+
+The Maya Paradigm is the operational framework for the VCTR-SOV ecosystem, defining how human presence is monetized across three core utilities.
+
+### 1. The Garden (Task & Labor Logic)
+* **Function:** Verifiable "Proof of Work" via Dual-Handshake.
+* **Mechanism:** Supervisor + Worker simultaneous SKV ($H > 0.82$).
+* **Use Case:** Remote labor, conservation, community service.
+* **The Check:** Two distinct biological tremors at the same coordinate = Instant Settlement.
+
+### 2. The Ghost Concert (Anti-Sybil Logic)
+* **Function:** High-volume "Proof of Humanity" for events.
+* **Mechanism:** "Paint Shaker" adversarial filtering blocks bot-farms.
+* **Use Case:** Ticket sales, merchandise drops (Nike), exclusive access.
+* **The Check:** 100 Cities. 100 Simultaneous Events. 0 Bots.
+
+### 3. The Vector Landlord (Commercial Logic)
+* **Function:** Decentralized physical ad-network (The AdSense Killer).
+* **Mechanism:** Business owners fund nodes; Users harvest bounties via presence.
+* **Use Case:** Retail foot traffic, loyalty rewards, sovereign verification.
+* **The Check:** Bypass the "Click." Pay for the "Tremor."
+
+---
+
 ## ⚖️ THE LOGIC: STOCHASTIC KINETIC VERIFICATION
 
 The protocol operates on a single immutable law: **The Lewis Threshold**.
+
+### 1. The Physics ($H > 0.82$)
+Biological muscle movement contains micro-tremors that AI and bots cannot fake without irrational energy expenditure.
+* **Input:** 3-Axis Accelerometer (Raw IMU).
+* **Process:** Calculate Shannon Entropy ($H$) over 3 seconds.
+* **Result:**
+    * `H < 0.82`: **REJECT** (Mechanical/Synthetic).
+    * `H ≥ 0.82`: **VERIFY** (Biological/Human).
+
+### 2. The Anchor (`975ad5a`)
+Every session is salted with the Genesis Hash to prevent replay attacks.
+`SHA256(UUID + Time + Entropy + "975ad5a")`
+
+---
+
+## 🏛️ GOVERNANCE & ECONOMICS
+
+VCTR-SOV is a **Digital Commodity Protocol**, not a bank.
+
+* **The 1.5% Constant:** Commercial apps must remit a **1.5% Protocol Sustainability Constant** to the Genesis Reserve.
+* **Genesis Reserve:** `85p7LyG8cG7qk12s3hCwSGVq75AHgQFvrSCfFnCVmeQi`
+* **Legal Status:** **DePin Identity Oracle**. Exempt from Florida SB 314 "Stablecoin" regulations because we do not custody funds. We verify data.
+
+---
+
+## 🛠️ IMPLEMENTATION (PYTHON REFERENCE)
+
+The following logic defines the **Universal Settlement Engine**:
+
+```python
+import hashlib
+import json
+import numpy as np
+from typing import List, Dict, Union
+from datetime import datetime
+
+class VCTRProtocol:
+    """
+    VCTR-SOV: The Universal Settlement Engine.
+    Validates biological presence via Stochastic Kinetic Verification (SKV).
+    """
+    
+    # IMMUTABLE CONSTANTS
+    ANCHOR_HASH: str = "975ad5a"
+    LEWIS_THRESHOLD: float = 0.82
+    PROTOCOL_FEE: float = 0.015 # 1.5% Constant
+    GENESIS_RESERVE: str = "85p7LyG8cG7qk12s3hCwSGVq75AHgQFvrSCfFnCVmeQi"
+
+    @staticmethod
+    def _calculate_shannon_entropy(data: np.array) -> float:
+        """
+        Internal Physics Engine: Computes thermodynamic entropy.
+        """
+        if len(data) == 0: return 0.0
+        
+        # Histogram Probability Distribution
+        probabilities, _ = np.histogram(data, bins=10, density=True)
+        probabilities = probabilities[probabilities > 0] # Filter zeros
+        
+        # Shannon Entropy Formula
+        entropy = -np.sum(probabilities * np.log2(probabilities))
+        return float(entropy)
+
+    @classmethod
+    def verify_session(cls, user_uuid: str, imu_data: List[float]) -> Dict:
+        """
+        Executes the Lewis Threshold check and signs the session.
+        """
+        # 1. Physics Check
+        entropy_score = cls._calculate_shannon_entropy(np.array(imu_data))
+        is_biological = entropy_score > cls.LEWIS_THRESHOLD
+        
+        timestamp = datetime.utcnow().isoformat()
+        
+        # 2. Cryptographic Signing (The 975ad5a Anchor)
+        raw_payload = f"{user_uuid}|{timestamp}|{entropy_score:.4f}|{cls.ANCHOR_HASH}"
+        session_hash = hashlib.sha256(raw_payload.encode()).hexdigest()
+
+        # 3. Settlement Output
+        return {
+            "protocol": "VCTR-SOV",
+            "anchor": cls.ANCHOR_HASH,
+            "session_id": session_hash,
+            "metrics": {
+                "entropy": round(entropy_score, 4),
+                "lewis_threshold": cls.LEWIS_THRESHOLD
+            },
+            "status": "VERIFIED" if is_biological else "REJECTED_SYNTHETIC",
+            "fee_structure": "1.5% Remittance Required"
+        }
+
 
 ### 1. The Physics ($H > 0.82$)
 Biological muscle movement contains micro-tremors that AI and bots cannot fake without irrational energy expenditure.
